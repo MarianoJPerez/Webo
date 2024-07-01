@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagramas de Interacción y Estados</title>
+    <title>Diagramas de interaccion - secuencia</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
@@ -18,13 +18,11 @@
             margin-bottom: 20px;
         }
 
-        .image-container {
-            margin-bottom: 20px;
-        }
-
-        .image-container img {
+        img {
             max-width: 100%;
             height: auto;
+            margin: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .description {
@@ -36,24 +34,38 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Diagramas de Interacción y Estados</h1>
-        <div class="image-container">
-            <img src="img\Diagrama de estados.drawio.png" alt="Diagrama de Interacción y Estados">
-        </div>
-        <div class="description">
-            <p>1. Producto cargado: El fabricante/proveedor interesado en que Blanco reseñe su producto realiza la primera solicitud y el producto es cargado al sistema.</p>
-            <p>2. Entrega de producto: Una vez cargado el producto, Blanco se comunica con el fabricante/proveedor para coordinar la entrega de producto a reseñar.</p>
-            <p>2.1. Producto solicitado: El producto se solicita al fabricante/proveedor.</p>
-            <p>2.2. Enviado: El fabricante/proveedor envió el producto.</p>
-            <p>2.3. Producto recibido: Blanco recibió el producto.</p>
-            <p>3. Pendiente de asignación: El producto se encuentra pendiente de asignación al influencer indicado.</p>
-            <p>4. Asignado: El producto ya ha sido asignado a un influencer.</p>
-            <p>5. Envio de producto a influencer: Una vez asignado el influencer que hará la reseña, Blanco le debe hacer llegar el producto.</p>
-            <p>6. Unboxing pendiente: El influencer ya recibió el producto y tiene que realizar el unboxing.</p>
-            <p>7. Unboxing publicado: El influencer publicó el unboxing por video/streaming.</p>
-            <p>8. En prueba por influencer: El influencer está probando el producto por unos días para luego publicar la reseña final.</p>
-            <p>9. Producto reseñado: El influencer finalizó la prueba del producto y publicó la reseña.</p>
-        </div>
+        <h1 class="title">Diagramas de interaccion - secuencia</h1>
+        <h3>1. Realiza Registro de Marca</h3>
+
+        <img src="img/Realiza Registro de Marca.png" alt="Realiza Registro de Marca">
+        
+        <h3>2. Registrar Productos</h3>
+        
+        <img src="img/Registrar Productos.png" alt="Registrar Productos">
+        
+        <h3>3. Publicitar Anuncios</h3>
+        
+        <img src="img/Publicitar Anuncios.png" alt="Publicitar Anuncios">
+        
+        <h3>4. Probadores Registra Reseña</h3>
+        
+        <img src="img/Probadores Registra Reseña.png" alt="Probadores Registra Reseña">
+        
+        <h3>5. Realiza Streaming</h3>
+        
+        <img src="img/Realiza Streaming.png" alt="Realiza Streaming">
+        
+        <h3>6. Administrador</h3>
+        
+        <img src="img/Administrador.png" alt="Administrador">
+        
+        <h3>7. Administrador solicita informe</h3>
+        
+        <img src="img/Administrador solicita informe.png" alt="Administrador solicita informe">
+        
+        <h3>8. Empleado de estadìsticas</h3>
+        
+        <img src="img/Empleado de estadìsticas.png" alt="Empleado de estadìsticas">
     </div>
 </body>
 </html>

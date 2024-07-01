@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backlog</title>
+    <title>Diagramas de Estados</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
@@ -18,6 +18,15 @@
             margin-bottom: 20px;
         }
 
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .description {
             color: #555;
             font-size: 16px;
@@ -27,9 +36,25 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Backlog</h1>
+        <h1 class="title">Diagramas de Estados</h1>
+        <div class="image-container">
+            <img src="img\Diagrama de estados.drawio.png" alt="Diagrama de Interacción y Estados">
+        </div>
         <div class="description">
-            <p>Contenido relacionado con la gestión del Product Backlog, priorización de tareas, y organización de las historias de usuario.</p>
+            <p><b>1. Producto cargado:</b> El fabricante/proveedor interesado en que Blanco reseñe su producto realiza la primera solicitud y el producto es cargado al sistema.</p>
+            <p><b>2. Entrega de producto:</b> Una vez cargado el producto, Blanco se comunica con el fabricante/proveedor para coordinar la entrega de producto a reseñar.</p>
+            <ul>
+                <li><b>2.1. Producto solicitado:</b> El producto se solicita al fabricante/proveedor.</li>
+                <li><b>2.2. Enviado:</b> El fabricante/proveedor envió el producto.</li>
+                <li><b>2.3. Producto recibido:</b> Blanco recibió el producto.</li>
+            </ul>
+            <p><b>3. Pendiente de asignación:</b> El producto se encuentra pendiente de asignación al influencer indicado.</p>
+            <p><b>4. Asignado:</b> El producto ya ha sido asignado a un influencer.</p>
+            <p><b>5. Envio de producto a influencer:</b> Una vez asignado el influencer que hará la reseña, Blanco le debe hacer llegar el producto.</p>
+            <p><b>6. Unboxing pendiente:</b> El influencer ya recibió el producto y tiene que realizar el unboxing.</p>
+            <p><b>7. Unboxing publicado:</b> El influencer publicó el unboxing por video/streaming.</p>
+            <p><b>8. En prueba por influencer:</b> El influencer está probando el producto por unos días para luego publicar la reseña final.</p>
+            <p><b>9. Producto reseñado:</b> El influencer finalizó la prueba del producto y publicó la reseña.</p>
         </div>
     </div>
 </body>
