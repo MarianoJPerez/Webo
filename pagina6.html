@@ -3,18 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagrama casos de uso</title>
+    <title>User Story Mapping</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .container {
+            text-align: center;
+            padding-top: 20px;
+        }
 
+        .title {
+            color: #d62828;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #555;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .story-mapping {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            width: calc(20% - 20px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .column:hover {
+            background-color: #e0e0e0;
+        }
+
+        .column h3 {
+            color: #d62828;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .column p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .modal-dialog {
+            margin: 20px auto;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .modal-body {
+            text-align: left;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Casos de uso</h1>
-        <div class="image-container">
-            <img src="img\Diagrama de casos de uso.png" alt="Imagen Grande">
+        <h1 class="title">User Story Mapping</h1>
+        <div class="description">
+            <p>User Story Mapping es una técnica ágil que permite organizar el Product Backlog en dos dimensiones con la intención de visualizar las funcionalidades del producto por una parte y por la otra los releases del producto. La técnica fue propuesta por Jeff Patton en el año 2005 y es muy utilizada por su sencillez y claridad al momento de definir las entregas.</p>
         </div>
-
+        <div class="story-mapping">
+            <div class="column" data-bs-toggle="modal" data-bs-target="#modalSistema">
+                <h3>Sistema</h3>
+                <div class="user-story">
+                    <strong>Descripción:</strong>
+                    <p>Como administrador de BLANCO, quiero que el sistema sea accesible desde múltiples dispositivos y soportar la concurrencia de hasta 20.000 usuarios.</p>
+                    <p>Como nuevo usuario del sistema BLANCO, quiero acceder a un módulo de capacitación interactivo dentro de la aplicación.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 3: Soporte de Alta Concurrencia</strong>
+                    <p>Como administrador de BLANCO, quiero que el sistema pueda soportar la concurrencia de hasta 20,000 usuarios, para asegurar que nuestra plataforma funcione sin problemas durante eventos de alta demanda.</p>
+                    <p><strong>Criterio de Aceptación:</strong> El sistema debe pasar pruebas de carga que simulen la concurrencia de 20,000 usuarios sin caídas ni degradación significativa del rendimiento.</p>
+                    <p><strong>Comentarios:</strong> Se debe realizar una prueba de estrés antes de cualquier evento importante para garantizar la estabilidad del sistema.</p>
+                </div>
+            </div>
+            <div class="column" data-bs-toggle="modal" data-bs-target="#modalMarca">
+                <h3>Marca</h3>
+                <div class="user-story">
+                    <strong>Descripción:</strong>
+                    <p>Como administrador de BLANCO, quiero que las marcas puedan cargar sus anuncios al sistema como video, imagen o texto.</p>
+                    <p>Quiero que las marcas puedan registrarse en el sistema.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 13: Registrar marca</strong>
+                    <p>Como administrador de BLANCO, quiero que las marcas puedan registrarse en el sistema, para que puedan cargar sus anuncios y asignarlos a productos o eventos específicos de los influencers.</p>
+                    <p><strong>Criterio de Aceptación:</strong> Las marcas deben poder crear una cuenta en el sistema proporcionando información relevante (nombre de la marca, dirección de correo electrónico, contraseña, etc.).</p>
+                    <p>Las marcas deben recibir un correo electrónico de verificación para activar su cuenta.</p>
+                    <p>Las marcas deben poder asignar anuncios a productos o eventos específicos.</p>
+                    <p><strong>Comentarios:</strong> El sistema debe garantizar la seguridad de la información proporcionada por las marcas.</p>
+                    <p>El sistema debe enviar notificaciones de confirmación de registro y activación de cuenta.</p>
+                    <p>Los administradores deben poder revisar y aprobar las cuentas de las marcas antes de que puedan cargar anuncios para asegurar que cumplan con los estándares de BLANCO.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 8: Integración de Anuncios de Marca</strong>
+                    <p>Como administrador de BLANCO, quiero que las marcas puedan cargar sus anuncios directamente en el sistema, para que estos anuncios se integren en los videos o eventos de los influencers.</p>
+                    <p><strong>Criterio de Aceptación:</strong> Las marcas deben poder subir anuncios en formato video, imagen o texto, y asignarlos a productos o eventos específicos.</p>
+                    <p><strong>Comentarios:</strong> Los anuncios deben ser revisados y aprobados antes de su publicación para asegurar que cumplan con los estándares de BLANCO.</p>
+                </div>
+            </div>
+            <div class="column" data-bs-toggle="modal" data-bs-target="#modalProducto">
+                <h3>Producto</h3>
+                <div class="user-story">
+                    <strong>Descripción:</strong>
+                    <p>Como marca de productos, quiero que el sistema me permita cargar nuevos productos con todos los detalles necesarios.</p>
+                    <p>Como administrador de BLANCO, quiero que el sistema me permita ver y gestionar el estado de los productos (pendientes, probados, etc.).</p>
+                    <p>Quiero que el sistema me permita asignar productos a influencers.</p>
+                    <p>Como influencer, quiero recibir notificaciones automáticas cuando se me asigne un nuevo producto.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 11: Cargar un producto</strong>
+                    <p>Como marca de productos, quiero que el sistema me permita cargar nuevos productos con todos los detalles necesarios, para tener un registro actualizado y completo de los productos disponibles para la venta.</p>
+                    <p><strong>Criterio de Aceptación:</strong> El sistema debe validar que todos los campos requeridos estén completos antes de permitir la carga del producto.</p>
+                    <p>Al cargar un producto, el sistema debe confirmar la acción y mostrar el producto en la lista de productos disponibles.</p>
+                    <p><strong>Comentarios:</strong> La interfaz de carga de productos debe ser intuitiva y fácil de usar, con indicaciones claras sobre los campos requeridos.</p>
+                    <p>Se debe permitir la carga de una imagen del producto como opcional para mejorar la visualización de estos.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 12: Designar un producto</strong>
+                    <p>Como administrador de BLANCO, quiero que el sistema me permita asignar productos a influencers, para llevar un control preciso de los productos en el flujo de trabajo.</p>
+                    <p><strong>Criterio de Aceptación:</strong> El sistema debe mostrar una lista de productos asignados a cada influencer con su estado actual.</p>
+                    <p>La interfaz debe ser intuitiva y permitir cambios rápidos de estado para facilitar la gestión diaria.</p>
+                    <p>El sistema debe permitir agregar comentarios o notas sobre cada producto.</p>
+                    <p><strong>Comentarios:</strong> La interfaz debe incluir filtros para buscar y ordenar los productos por estado, fecha de asignación, o nombre del influencer.</p>
+                    <p>Se debe incluir un historial de cambios para rastrear todas las modificaciones realizadas en el estado de cada producto.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 7: Gestión de Estado de Productos</strong>
+                    <p>Como administrador de BLANCO, quiero que el sistema me permita ver y gestionar el estado de los productos (pendientes, probados, etc.), para llevar un control preciso de los productos en el flujo de trabajo.</p>
+                    <p><strong>Criterio de Aceptación:</strong> El sistema debe mostrar una lista de productos con su estado actual y permitir cambiar el estado de un producto a "pendiente", "en prueba", o "probado".</p>
+                    <p><strong>Comentarios:</strong> La interfaz debe ser intuitiva y permitir cambios rápidos de estado para facilitar la gestión diaria.</p>
+                </div>
+            </div>
+            <div class="column" data-bs-toggle="modal" data-bs-target="#modalEstadisticas">
+                <h3>Estadísticas</h3>
+                <div class="user-story">
+                    <strong>Descripción:</strong>
+                    <p>Como influencer, quiero un resumen semanal de mi actividad y estadísticas.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 9: Resumen de Actividad del Influencer</strong>
+                    <p>Como influencer, quiero un resumen semanal de mi actividad y estadísticas, para entender mi rendimiento y planificar futuras acciones.</p>
+                    <p><strong>Criterio de Aceptación:</strong> El sistema debe enviar un informe semanal por correo electrónico con un resumen de las actividades del influencer, incluyendo visualizaciones, interacciones, y comentarios en sus videos y publicaciones.</p>
+                    <p><strong>Comentarios:</strong> El informe debe ser claro y fácil de leer, destacando las métricas más importantes y cualquier cambio significativo respecto a semanas anteriores.</p>
+                </div>
+            </div>
+            <div class="column" data-bs-toggle="modal" data-bs-target="#modalInforme">
+                <h3>Informe</h3>
+                <div class="user-story">
+                    <strong>Descripción:</strong>
+                    <p>Como administrador de BLANCO, quiero ver las estadísticas de influencia de los videos publicados por los influencers.</p>
+                </div>
+                <div class="user-story">
+                    <strong>US 2: Generación de Informes de Influencia</strong>
+                    <p>Como administrador de BLANCO, quiero ver las estadísticas de influencia de los videos publicados por los influencers, para medir el impacto de nuestras campañas y proporcionar informes a las marcas.</p>
+                    <p><strong>Criterio de Aceptación:</strong> Cuando un influencer suba un video, el sistema recopilará automáticamente las estadísticas de visualizaciones, likes, comentarios y compartidos, y generará un informe detallado.</p>
+                    <p><strong>Comentarios:</strong> El informe debe estar disponible en formato PDF y CSV para facilitar su análisis y distribución.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalSistema" tabindex="-1" aria-labelledby="modalSistemaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSistemaLabel">Detalles del Sistema</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-story">
+                        <strong>Descripción:</strong>
+                        <p>Como administrador de BLANCO, quiero que el sistema sea accesible desde múltiples dispositivos y soportar la concurrencia de hasta 20.000 usuarios.</p>
+                        <p>Como nuevo usuario del sistema BLANCO, quiero acceder a un módulo de capacitación interactivo dentro de la aplicación.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 3: Soporte de Alta Concurrencia</strong>
+                        <p>Como administrador de BLANCO, quiero que el sistema pueda soportar la concurrencia de hasta 20,000 usuarios, para asegurar que nuestra plataforma funcione sin problemas durante eventos de alta demanda.</p>
+                        <p><strong>Criterio de Aceptación:</strong> El sistema debe pasar pruebas de carga que simulen la concurrencia de 20,000 usuarios sin caídas ni degradación significativa del rendimiento.</p>
+                        <p><strong>Comentarios:</strong> Se debe realizar una prueba de estrés antes de cualquier evento importante para garantizar la estabilidad del sistema.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMarca" tabindex="-1" aria-labelledby="modalMarcaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalMarcaLabel">Detalles de Marca</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-story">
+                        <strong>Descripción:</strong>
+                        <p>Como administrador de BLANCO, quiero que las marcas puedan cargar sus anuncios al sistema como video, imagen o texto.</p>
+                        <p>Quiero que las marcas puedan registrarse en el sistema.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 13: Registrar marca</strong>
+                        <p>Como administrador de BLANCO, quiero que las marcas puedan registrarse en el sistema, para que puedan cargar sus anuncios y asignarlos a productos o eventos específicos de los influencers.</p>
+                        <p><strong>Criterio de Aceptación:</strong> Las marcas deben poder crear una cuenta en el sistema proporcionando información relevante (nombre de la marca, dirección de correo electrónico, contraseña, etc.).</p>
+                        <p>Las marcas deben recibir un correo electrónico de verificación para activar su cuenta.</p>
+                        <p>Las marcas deben poder asignar anuncios a productos o eventos específicos.</p>
+                        <p><strong>Comentarios:</strong> El sistema debe garantizar la seguridad de la información proporcionada por las marcas.</p>
+                        <p>El sistema debe enviar notificaciones de confirmación de registro y activación de cuenta.</p>
+                        <p>Los administradores deben poder revisar y aprobar las cuentas de las marcas antes de que puedan cargar anuncios para asegurar que cumplan con los estándares de BLANCO.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 8: Integración de Anuncios de Marca</strong>
+                        <p>Como administrador de BLANCO, quiero que las marcas puedan cargar sus anuncios directamente en el sistema, para que estos anuncios se integren en los videos o eventos de los influencers.</p>
+                        <p><strong>Criterio de Aceptación:</strong> Las marcas deben poder subir anuncios en formato video, imagen o texto, y asignarlos a productos o eventos específicos.</p>
+                        <p><strong>Comentarios:</strong> Los anuncios deben ser revisados y aprobados antes de su publicación para asegurar que cumplan con los estándares de BLANCO.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProductoLabel">Detalles de Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-story">
+                        <strong>Descripción:</strong>
+                        <p>Como marca de productos, quiero que el sistema me permita cargar nuevos productos con todos los detalles necesarios.</p>
+                        <p>Como administrador de BLANCO, quiero que el sistema me permita ver y gestionar el estado de los productos (pendientes, probados, etc.).</p>
+                        <p>Quiero que el sistema me permita asignar productos a influencers.</p>
+                        <p>Como influencer, quiero recibir notificaciones automáticas cuando se me asigna un nuevo producto.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 11: Cargar un producto</strong>
+                        <p>Como marca de productos, quiero que el sistema me permita cargar nuevos productos con todos los detalles necesarios, para tener un registro actualizado y completo de los productos disponibles para la venta.</p>
+                        <p><strong>Criterio de Aceptación:</strong> El sistema debe validar que todos los campos requeridos estén completos antes de permitir la carga del producto.</p>
+                        <p>Al cargar un producto, el sistema debe confirmar la acción y mostrar el producto en la lista de productos disponibles.</p>
+                        <p><strong>Comentarios:</strong> La interfaz de carga de productos debe ser intuitiva y fácil de usar, con indicaciones claras sobre los campos requeridos.</p>
+                        <p>Se debe permitir la carga de una imagen del producto como opcional para mejorar la visualización de estos.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 12: Designar un producto</strong>
+                        <p>Como administrador de BLANCO, quiero que el sistema me permita asignar productos a influencers, para llevar un control preciso de los productos en el flujo de trabajo.</p>
+                        <p><strong>Criterio de Aceptación:</strong> El sistema debe mostrar una lista de productos asignados a cada influencer con su estado actual.</p>
+                        <p>La interfaz debe ser intuitiva y permitir cambios rápidos de estado para facilitar la gestión diaria.</p>
+                        <p>El sistema debe permitir agregar comentarios o notas sobre cada producto.</p>
+                        <p><strong>Comentarios:</strong> La interfaz debe incluir filtros para buscar y ordenar los productos por estado, fecha de asignación, o nombre del influencer.</p>
+                        <p>Se debe incluir un historial de cambios para rastrear todas las modificaciones realizadas en el estado de cada producto.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 7: Gestión de Estado de Productos</strong>
+                        <p>Como administrador de BLANCO, quiero que el sistema me permita ver y gestionar el estado de los productos (pendientes, probados, etc.), para llevar un control preciso de los productos en el flujo de trabajo.</p>
+                        <p><strong>Criterio de Aceptación:</strong> El sistema debe mostrar una lista de productos con su estado actual y permitir cambiar el estado de un producto a "pendiente", "en prueba", o "probado".</p>
+                        <p><strong>Comentarios:</strong> La interfaz debe ser intuitiva y permitir cambios rápidos de estado para facilitar la gestión diaria.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEstadisticas" tabindex="-1" aria-labelledby="modalEstadisticasLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEstadisticasLabel">Detalles de Estadísticas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-story">
+                        <strong>Descripción:</strong>
+                        <p>Como influencer, quiero un resumen semanal de mi actividad y estadísticas.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 9: Resumen de Actividad del Influencer</strong>
+                        <p>Como influencer, quiero un resumen semanal de mi actividad y estadísticas, para entender mi rendimiento y planificar futuras acciones.</p>
+                        <p><strong>Criterio de Aceptación:</strong> El sistema debe enviar un informe semanal por correo electrónico con un resumen de las actividades del influencer, incluyendo visualizaciones, interacciones, y comentarios en sus videos y publicaciones.</p>
+                        <p><strong>Comentarios:</strong> El informe debe ser claro y fácil de leer, destacando las métricas más importantes y cualquier cambio significativo respecto a semanas anteriores.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalInforme" tabindex="-1" aria-labelledby="modalInformeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalInformeLabel">Detalles de Informe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-story">
+                        <strong>Descripción:</strong>
+                        <p>Como administrador de BLANCO, quiero ver las estadísticas de influencia de los videos publicados por los influencers.</p>
+                    </div>
+                    <div class="user-story">
+                        <strong>US 2: Generación de Informes de Influencia</strong>
+                        <p>Como administrador de BLANCO, quiero ver las estadísticas de influencia de los videos publicados por los influencers, para medir el impacto de nuestras campañas y proporcionar informes a las marcas.</p>
+                        <p><strong>Criterio de Aceptación:</strong> Cuando un influencer suba un video, el sistema recopilará automáticamente las estadísticas de visualizaciones, likes, comentarios y compartidos, y generará un informe detallado.</p>
+                        <p><strong>Comentarios:</strong> El informe debe estar disponible en formato PDF y CSV para facilitar su análisis y distribución.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-axkZ7L6FV1ALg2jPW4PPDMDYLwl1l9h1f/TtL3+HBS8bTTpXm4GfFdmBNkkjUJbg" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-10B3n27VhCIkBj3jM6ZB6oHHCqX6KE7wRz+8RDJoAqFpxE4zxrGsFy5n2R/p0l+G" crossorigin="anonymous"></script>
+
 </body>
 </html>
