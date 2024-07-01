@@ -3,41 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily</title>
+    <title>Daily Updates</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .container {
-            text-align: center;
-            padding-top: 20px;
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
-
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         .title {
             color: #d62828;
-            font-size: 24px;
+            font-size: 32px;
             margin-bottom: 20px;
         }
-
-        .description {
+        .daily-update {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .daily-update h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .daily-update p {
             color: #555;
             font-size: 16px;
-            text-align: left;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Daily</h1>
-        <div class="description">
-            <h2>¿Qué hiciste ayer para ayudar al equipo a terminar el sprint?</h2>
-            <p>Ayer estuve trabajando en US 11: Cargar un producto, US 12: Designar un producto y US 7: Gestión de Estado de Productos.</p>
+        <h1 class="title">Daily Updates</h1>
 
-            <h2>¿Mañana qué vas a hacer para ayudar al equipo a terminar el sprint?</h2>
-            <p>Hoy avanzaré con US 4: Filtros de Vídeo y Ajustes de Audio en Vivo. A la US 4 le falta información, con lo cual necesito ayuda para profundizar aún más.</p>
-
-            <h2>¿Qué obstáculos se interponen en tu camino o el del equipo?</h2>
-            <p>Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        <div class="daily-update">
+            <h2>Daily 1</h2>
+            <p>Hoy avanzaré con la US 3: Soporte de Alta Concurrencia y con US 13: Registrar marca.<br>
+            A las historias de usuario no le falta información, con lo cual no requiero ayuda.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
         </div>
+
+        <div class="daily-update">
+            <h2>Daily 2</h2>
+            <p>Ayer estuve trabajando la historia de usuario US 3: Soporte de Alta Concurrencia y con US 13: Registrar marca.<br>
+            Hoy terminaré con US 13: Registrar marca y avanzaré con US 8: Integración de Anuncios de Marca y US 11: Cargar un producto.<br>
+            A las historias de usuario no le falta información, con lo cual no requiero ayuda.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        </div>
+
+        <div class="daily-update">
+            <h2>Daily 3</h2>
+            <p>Ayer estuve trabajando en US 13: Registrar marca, US 8: Integración de Anuncios de Marca y US 11: Cargar un producto.<br>
+            Hoy terminaré US 11: Cargar un producto y avanzaré con US 12: Designar un producto y US 7: Gestión de Estado de Productos.<br>
+            A las historias de usuario no le falta información, con lo cual no requiero ayuda.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        </div>
+
+        <div class="daily-update">
+            <h2>Daily 4</h2>
+            <p>Ayer estuve trabajando en US 11: Cargar un producto, US 12: Designar un producto y US 7: Gestión de Estado de Productos.<br>
+            Hoy avanzaré con US 4: Filtros de Vídeo y Ajustes de Audio en Vivo.<br>
+            A la US 4 le falta información, con lo cual necesito ayuda para profundizar aún más.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        </div>
+
+        <div class="daily-update">
+            <h2>Daily 5</h2>
+            <p>Ayer estuve trabajando en US 4: Filtros de Vídeo y Ajustes de Audio en Vivo, debido a la falta de información no se pudo completar esta US.<br>
+            Hoy avanzaré con US 9: Resumen de Actividad del Influencer y US 2: Generación de Informes de Influencia.<br>
+            A la historia de usuario no le falta información, con lo cual no requiero ayuda.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        </div>
+
+        <div class="daily-update">
+            <h2>Daily 6</h2>
+            <p>Ayer estuve trabajando en US 9: Resumen de Actividad del Influencer y US 2: Generación de Informes de Influencia.<br>
+            Hoy avanzaré con US 2: Generación de Informes de Influencia para terminarla y así acabar con el Sprint Backlog 1.<br>
+            A la historia de usuario no le falta información, con lo cual no requiero ayuda.<br>
+            Confirmo que este Status ya está actualizado y al día en el Board.</p>
+        </div>
+
     </div>
 </body>
 </html>
